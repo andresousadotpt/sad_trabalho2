@@ -68,7 +68,6 @@ public class SocketServer {
             output.close();
         }
 
-        // Close client Socket
         if (clientSocket != null) {
             try {
                 clientSocket.close();
@@ -77,7 +76,6 @@ public class SocketServer {
             }
         }
 
-        // Close server ServerSocket
         if (serverSocket != null) {
             try {
                 serverSocket.close();
