@@ -56,7 +56,6 @@ public class SocketServer {
      * Terminate the service - close ALL I/O
      */
     public void stop() {
-        // Close input BufferedReader
         if (input != null) {
             try {
                 input.close();
@@ -65,9 +64,8 @@ public class SocketServer {
             }
         }
 
-        // Close output PrintWriter
         if (output != null) {
-            output.close(); // PrintWriter does not throw IOException
+            output.close();
         }
 
         // Close client Socket
@@ -96,7 +94,6 @@ public class SocketServer {
      * @param filePath - path where the configuration file is located
      */
     private void configureEncryptionAlgorithm(String filePath) throws Exception {
-        // Simulated configuration of the encryption algorithm
         this.encryptionAlgorithm = new CaesarEnigma();
         this.encryptionAlgorithm.configure(filePath);
     }
@@ -144,7 +141,6 @@ public class SocketServer {
      *             path for the configuration file
      */
     public static void main(String[] args) {
-        // Validate arguments (like a specific port number or config file)
         if (args.length < 1) {
             System.out.println("Error: Configuration file path not provided.");
             return;
@@ -153,7 +149,7 @@ public class SocketServer {
         SocketServer server = new SocketServer();
         try {
             server.configureEncryptionAlgorithm(args[COMMAND_LINE_ARGUMENT_FILE_PATH]);
-            server.start(PORT); // Start server on the given port
+            server.start(PORT);
 
             server.processServerCommunications();
         } catch (FileNotFoundException e) {

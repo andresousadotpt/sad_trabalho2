@@ -21,7 +21,6 @@ public class SocketClient {
      * 
      * @param port - port to connect the client to
      */
-
     public void startConnection(int port) throws IOException {
         socket = new Socket(SERVER_IP, port);
         output = new PrintWriter(socket.getOutputStream(), true);
@@ -49,7 +48,6 @@ public class SocketClient {
      * Close ALL client I/O
      */
     public void stop() throws IOException {
-        // Close input BufferedReader
         if (input != null) {
             try {
                 input.close();
@@ -58,12 +56,10 @@ public class SocketClient {
             }
         }
 
-        // Close output PrintWriter
         if (output != null) {
-            output.close(); // PrintWriter does not throw IOException
+            output.close();
         }
 
-        // Close client Socket
         if (socket != null) {
             try {
                 socket.close();
