@@ -1,0 +1,6 @@
+<XML>
+    <alphabet>UPPER+DIGITS</alphabet>
+    <encryption-key value-type="Int" min-value="1" max-value="36"> 13 </encryption-key>
+    <increment-factor value-type="Int" min-value="1" max-value="35"> 2 </increment-factor>
+    <plugboard> {'A':'BC', 'D':'EF'} </plugboard> <!-- Invalid format, multiple characters after colon -->
+</XML>
