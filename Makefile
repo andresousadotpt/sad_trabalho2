@@ -4,13 +4,13 @@ build:
 	javac SocketClient.java
 	
 server: build
-	java SocketServer valid_config.xml
+	java SocketServer configs/valid_config.xml
 
 client: build
-	java SocketClient valid_config.xml
+	java SocketClient configs/valid_config.xml
 
 tests: build
-	java SocketServer invalid_plugboard_collision.xml
-	java SocketServer invalid_plugboard_format.xml
-	java SocketServer invalid_encryption_key.xml
-	java SocketServer invalid_increment_factor.xml
+	java SocketServer configs/invalid_plugboard_collision.xml
+	java SocketServer configs/invalid_plugboard_format.xml
+	java SocketServer configs/invalid_encryption_key.xml
+	java SocketServer configs/invalid_increment_factor.xml
